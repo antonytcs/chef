@@ -1,0 +1,4 @@
+chef generate cookbook samples
+knife cookbook  upload samples
+knife bootstrap  -N node1 172.28.128.3 -x vagrant -P vagrant --sudo
+knife node run_list  add node1 "recipe[samples]"
